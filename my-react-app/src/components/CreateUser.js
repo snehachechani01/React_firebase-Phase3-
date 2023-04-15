@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-
+import "../css/CreateUser.css";
 function CreateUser() {
   const navigate = useNavigate();
 

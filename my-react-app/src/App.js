@@ -6,8 +6,8 @@ import Home from './components/Home/Home';
 import CreateUser from './components/CreateUser';
 import EditUser from './components/EditUser';
 import ListUser from './components/ListUser';
-import SignIn from './components/Signin';
-import SignUp from './components/Signup';
+import Signin from './components/Signin';
+import Signup from './components/Signup';
 import AuthDetails from './components/AuthDetails.jsx';
 import {auth} from './firebase';
 function App() {
@@ -28,27 +28,21 @@ function App() {
   }, []);
   return (
     <div className="App">
-      <h5>React CRUD operations using PHP API and MySQL</h5>
-        <div className="App">
-      <SignIn />
-      <SignUp />
-      <AuthDetails />
-    </div>
+      
+      
+    
+
+      
+    
       <BrowserRouter>
-        <nav>
-          <ul>
-            {/* <li>
-              <Link to="/">Show Users</Link>
-            </li> */}
-            <li>
-              <Link to="user/create">Create User</Link>
-            </li>
-          </ul>
-        </nav>
+      
+            
         <Routes>
-        <Route path={'Home'} element={<Home name={userName} email={userEmail}  />} />
+        <Route path={'/Home'} element={<Home name={userName} email={userEmail}  />} />
+        <Route path={'/Signin'} element={<Signin />} />
+         <Route index element={<Signup />} />
           <Route path="ListUser"element={<ListUser />} />
-          <Route path="user/create" element={<CreateUser />} />
+          <Route path="Createuser" element={<CreateUser />} />
           {/* <Route path="user/:id/edit" element={<EditUser />} /> */}
           <Route path={"ListUser/:id/edit"} element={<EditUser />} />
         </Routes>

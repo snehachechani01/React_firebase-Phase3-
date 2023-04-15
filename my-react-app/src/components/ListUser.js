@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import "../css/Listuser.css";
 
  function ListUser() {
 
@@ -31,6 +32,7 @@ import { Link } from "react-router-dom";
         }
     
     }
+
     return (
         <div>
             <h1>List Users</h1>
