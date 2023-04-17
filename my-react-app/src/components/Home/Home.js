@@ -43,7 +43,7 @@ function Home(props){
                         <nav className="nav-menu">
                             <ul className="nav-list">
                                 <li className="nav-item">
-                                    <Link to={"/CreateUser"} className="nav-link">Create Contact</Link>
+                                    {/* <Link to={"/CreateUser"} className="nav-link">Create Contact</Link> */}
 
                                 
                                 </li>

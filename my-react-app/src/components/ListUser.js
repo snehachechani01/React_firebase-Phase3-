@@ -35,6 +35,8 @@ import "../css/Listuser.css";
 
     return (
         <div>
+            <Link to={"/CreateUser"} className="nav-link">Create Contact</Link>
+            
             <h1>List Users</h1>
             <table>
                 <thead>
@@ -47,6 +49,7 @@ import "../css/Listuser.css";
                     </tr>
                 </thead>
                 <tbody>
+                    
                      {
                         contacts.map((user, key) =>(
                             <tr key={key}>
@@ -55,6 +58,7 @@ import "../css/Listuser.css";
                                 <td>{user.email}</td>
                                 <td>{user.mobile}</td>
                                 <td>
+                                    
                                 <Link to={`/ListUser/${user.id}/edit`} className="edit-link">Edit</Link>
                                 <button onClick={() => deleteContact(user.id)} className="delete-button">Delete</button>
                                 </td>
