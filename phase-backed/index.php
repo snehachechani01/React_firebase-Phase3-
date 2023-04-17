@@ -21,10 +21,11 @@ switch ($method) {
     case "GET":
         $sql = "SELECT * FROM `contact`";
         $path = explode('/', $_SERVER['REQUEST_URI']);
-        if (isset($path[5]) && is_numeric($path[5])) {
+        if (isset($path[4]) && is_numeric($path[4])) {
+            // $id = $_GET['id'];
             $sql .= "WHERE id = :id";
             $stm = $conn->prepare($sql);
-            $stm->bindParam(':id', $path[5]);
+            $stm->bindParam(':id', $path[4]);
             $stm->execute();
             $users = $stm->fetchAll(PDO::FETCH_ASSOC);
         } else {
@@ -72,12 +73,12 @@ switch ($method) {
 
 
 
-        $id = $user->id;
+        // $id = $user->id;
         $name = $user->name;
         $email = $user->email;
         $mobile = !empty($user->mobile) ? $user->mobile : '1234567890';
-
-        $stm->bindParam("id", $id);
+        $path = explode('/', $_SERVER['REQUEST_URI']);
+        $stm->bindParam(":id", $path[4]);
         $stm->bindParam(':name', $name);
         $stm->bindParam(':email', $email);
         $stm->bindParam(':mobile', $mobile, PDO::PARAM_INT);

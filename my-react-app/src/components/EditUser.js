@@ -44,7 +44,7 @@ function EditUser() {
           .put(`http://localhost:80/Phase3/phase-backed/index.php/${id}/edit`, inputs)
           .then(function (response) {
             console.log(response.data);
-            navigate('/Home');
+            navigate('/ListUser');
           })
           .catch(function (error) {
             console.log(error);

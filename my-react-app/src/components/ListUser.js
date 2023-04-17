@@ -55,7 +55,7 @@ import "../css/Listuser.css";
                                 <td>{user.email}</td>
                                 <td>{user.mobile}</td>
                                 <td>
-                                <Link to={`${user.id}/edit`} className="edit-link">Edit</Link>
+                                <Link to={`/ListUser/${user.id}/edit`} className="edit-link">Edit</Link>
                                 <button onClick={() => deleteContact(user.id)} className="delete-button">Delete</button>
                                 </td>
                             </tr>
